@@ -16,7 +16,7 @@ class AddressPing :
     def update_label(self):
         if self.loop_running:
             self.count+=1
-            text = str(self.count)+ " ping to "+ self.ip+" result is "+ str(self.ping(self.ip))
+            text = str(self.count)+ " ping to "+ self.ip+" result is "+ self.ping(self.ip).decode('utf-8')
             self.label.config(text=text)
 
         self.gui.after(3000,self.update_label)
@@ -27,10 +27,10 @@ class AddressPing :
             return
         param = '-n' if platform.system().lower() == 'windows' else '-c'
 
-        command = ['ping',param,'1',host]
+        command = ['ping',param,'1',host,]
         return subprocess.check_output(command)
     
-    
+
     def start_ping(self):
         self.ip = self.ip_input.get()
         self.loop_running = True

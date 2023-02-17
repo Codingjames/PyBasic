@@ -27,7 +27,7 @@ style.map("Mod.TButton",
 
 address = Entry()
 address.pack()
-address.place(x=200,y=20)
+address.place(x=220,y=20)
 
 
 x = True
@@ -38,13 +38,13 @@ addr_ping = AddressPing(GUI,address)
 btn = ttk.Button(GUI,text="start ping",command=addr_ping.start_ping,style="Jam.TButton")
 
 btn.pack()
-btn.place(x=180,y=50)
+btn.place(x=200,y=50)
 
 btn_stop = ttk.Button(GUI,text="stop ping",command=addr_ping.stop_ping ,style="Mod.TButton") 
 btn_stop.configure()
 btn_stop.pack()
-btn_stop.place(x=260,y=50)
+btn_stop.place(x=280,y=50)
 
-addr_ping.label.place(x=50,y=100)
+addr_ping.label.place(x=100,y=100)
 
 GUI.mainloop()
