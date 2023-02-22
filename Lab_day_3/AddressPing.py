@@ -25,6 +25,7 @@ class AddressPing :
     def ping(self,host):
         if(self.ip==''):
             return
+        
         param = '-n' if platform.system().lower() == 'windows' else '-c'
 
         command = ['ping',param,'1',host,]
